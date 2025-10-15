@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Film Interstellar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0a3edb, #4d4e50, #226fce);
+      color: #965656;
+      text-align: center;
+      padding: 50px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px 50px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    img.logo {
+      width: 130px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(175, 80, 80, 0.4);
+      transition: transform 0.3s ease;
+    }
+    img.logo:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    h1 {
+      color: #ffcc70;
+      margin-top: 20px;
+      text-shadow: 0 0 10px #a09e9b;
+      letter-spacing: 1px;
+    }
+
+    .detail {
+      text-align: left;
+      background: rgba(236, 25, 25, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .judul { color: #d4d3ca; text-shadow: 0 0 8px #0f0f0f; }
+    .tahun { color: #ff9bb1; text-shadow: 0 0 8px #2708d6; }
+    .sutradara { color: #5ba865; text-shadow: 0 0 8px #527481; }
+    .genre { color: #645e61; text-shadow: 0 0 8px #0a428b; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.pinimg.com/736x/18/51/81/185181deb1a1507ad0d21613ff095b14.jpg" 
+         alt="Logo Interstellar" class="logo">
+    <h1>🎬 Data Film: Interstellar</h1>
+    <div class="detail" id="output"></div>
+  </div>
+
+  <script>
+    const film = {
+      judul: "Interstellar",
+      tahunRilis: 2014,
+      sutradara: "Christopher Nolan",
+      genre: ["Sci-Fi", "Adventure", "Drama"],
+      tampilkanDetail: function () {
+        return `
+          <p class="judul"><b>Judul:</b> ${this.judul}</p>
+          <p class="tahun"><b>Tahun Rilis:</b> ${this.tahunRilis}</p>
+          <p class="sutradara"><b>Sutradara:</b> ${this.sutradara}</p>
+          <p class="genre"><b>Genre:</b> ${this.genre.join(", ")}</p>
+        `;
+      },
+    };
+
+    document.getElementById("output").innerHTML = film.tampilkanDetail();
+  </script>
+</body>
+</html>
